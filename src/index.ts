@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import { Calculator } from "./calculator";
+import { Calculator } from "./lib";
 import { Interfaces, Commands } from "./types";
 
 class Program {
@@ -17,7 +17,6 @@ class Program {
           this.clearLastResult();
           continue;
         } else {
-
           if (this.lastResult !== 0) {
             input = `${this.lastResult} ${input}`;
           }
@@ -53,7 +52,8 @@ const main = () => {
 
     const program = new Program();
     program.run();
-  } catch (error) {
+  } catch (error: any) {
+    console.error(error.message);
     process.exit();
   }
 };
