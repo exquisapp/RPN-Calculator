@@ -2,6 +2,11 @@ import { operators } from "./operators";
 
 export class Calculator {
   private arity: number = 2;
+  private input: string = "";
+
+  constructor(input: string) {
+    this.input = input;
+  }
 
   private sanitizeInput(input: string | string[]): string[] {
     if (typeof input === "string") {
@@ -13,7 +18,7 @@ export class Calculator {
     return input;
   }
 
-  private tokenizer(tokens: string[]) {
+  private tokenizeInput(tokens: string[]) {
     return tokens.map((token: string) => {
       return operators[token] || parseFloat(token);
     });
@@ -26,9 +31,8 @@ export class Calculator {
       if (typeof token === "number" && !isNaN(token) && isFinite(token)) {
         stack.push(token);
       } else if (typeof token === "function") {
-        if (stack.length < this.arity) {
-          throw new Error("Provide more values");
-        }
+        if (stack.length < this.arity) throw new Error("Provide more values");
+
         stack.push(token.apply(null, stack.splice(-2)));
       } else {
         throw new TypeError("Invalid input token");
@@ -39,7 +43,7 @@ export class Calculator {
     return stack[0];
   }
 
-  public compute(input: string): number {
-    return this.calculate(this.tokenizer(this.sanitizeInput(input)));
+  public compute(): number {
+    return this.calculate(this.tokenizeInput(this.sanitizeInput(this.input)));
   }
 }
