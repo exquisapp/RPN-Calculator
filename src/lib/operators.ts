@@ -1,4 +1,4 @@
-import { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION } from "./constants";
+import { ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION } from "../constants";
 
 export const operators = {
   [ADDITION]: function (x: number, y: number): number {

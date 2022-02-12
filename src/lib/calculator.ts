@@ -18,8 +18,8 @@ export class Calculator {
     return input;
   }
 
-  private tokenizeInput(tokens: string[]) {
-    return tokens.map((token: string) => {
+  private tokenizeInput(tokens: any[]) {
+    return tokens.map((token: any) => {
       return operators[token] || parseFloat(token);
     });
   }
