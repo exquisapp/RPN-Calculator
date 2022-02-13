@@ -41,6 +41,7 @@ class Program {
 
   private clearLastResult(): void {
     this.lastResult = 0;
+    console.log("Last saved result cleared successfully!");
   }
 }
 
