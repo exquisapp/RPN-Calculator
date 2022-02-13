@@ -1,8 +1,8 @@
 {
   "name": "rpn-calculator",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "RPN CLI Calculator",
+  "main": "build/index.js",
   "scripts": {
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/exquisapp/RPN-Calculator.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [ "RPN", "Calculator" ],
+  "author": "Segun Abolaji",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/exquisapp/RPN-Calculator/issues"
