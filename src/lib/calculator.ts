@@ -8,6 +8,10 @@ export class Calculator {
     this.input = input;
   }
 
+  private isNumber(value: any): boolean {
+    return typeof value === "number" && !isNaN(value) && isFinite(value);
+  }
+
   private sanitizeInput(input: string | string[]): string[] {
     if (typeof input === "string") {
       input = input.split(/\s+/);
@@ -28,7 +32,7 @@ export class Calculator {
     let stack: number[] = [];
 
     for (const token of tokens) {
-      if (typeof token === "number" && !isNaN(token) && isFinite(token)) {
+      if (this.isNumber(token)) {
         stack.push(token);
       } else if (typeof token === "function") {
         if (stack.length < this.arity) throw new Error("Provide more values");
