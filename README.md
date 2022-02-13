@@ -6,6 +6,7 @@ A command-line interface (CLI) reverse polish notation (RPN) calculator for perf
 ### System Requirement
 - Node (>= v14)
 - Package Manager (NPM or Yarn)
+- Docker (Optional)
 
 ### Folder structure
 
@@ -53,6 +54,7 @@ Please follow the instructions below to install and run the application:
 * Clone the project using `git clone https://github.com/exquisapp/RPN-Calculator.git`
 * On the root folder of the project run `yarn` or `yarn install` to install dependencies of the project
 * Then run `yarn start` to start the project
+* You can also run the application using Docker. Use `docker build -t rpncalculator .` to build the image and use `docker run -i -t rpncalculator` to run the image.
 
 #### Usage
 
