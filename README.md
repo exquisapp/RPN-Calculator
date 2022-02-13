@@ -73,7 +73,7 @@ Note: To exit the program please use `q` or `Ctrl+D` or `EOF` and to clear the p
 ### How to add a new operator
 
 * Locate the `src/constants/operator.ts` file and add the new operator as a constant. Example: `export const MODULUS: string = "^"`
-* Locate the `src/lib/operators.ts` file' and the new operator function to the operator object as specified below:
+* Locate the `src/lib/operators.ts` file and add the new operator function to the operator object as specified below:
 
 ```javascript
 
