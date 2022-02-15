@@ -46,7 +46,8 @@ var Calculator = /** @class */ (function () {
         return stack[0];
     };
     Calculator.prototype.compute = function () {
-        return this.calculate(this.tokenizeInput(this.sanitizeInput(this.input)));
+        var result = Math.round(this.calculate(this.tokenizeInput(this.sanitizeInput(this.input))) * 100) / 100;
+        return result;
     };
     return Calculator;
 }());

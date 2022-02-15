@@ -48,6 +48,10 @@ export class Calculator {
   }
 
   public compute(): number {
-    return this.calculate(this.tokenizeInput(this.sanitizeInput(this.input)));
+    return (
+      Math.round(
+        this.calculate(this.tokenizeInput(this.sanitizeInput(this.input))) * 100
+      ) / 100
+    );
   }
 }
